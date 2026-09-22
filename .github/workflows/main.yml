@@ -22,18 +22,17 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: npm
 
       - name: Instalar dependencias
-        run: npm ci
+        run: npm install
 
       - name: Construir proyecto
         run: npm run build
 
-      - name: Configurar Pages
+      - name: Configurar GitHub Pages
         uses: actions/configure-pages@v5
 
-      - name: Subir archivos
+      - name: Preparar archivos
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./dist
@@ -46,6 +45,6 @@ jobs:
     needs: build
 
     steps:
-      - name: Publicar en GitHub Pages
+      - name: Publicar página
         id: deployment
         uses: actions/deploy-pages@v4

@@ -1,0 +1,8 @@
+{
+  "name": "Aseo Vía - Servicios Profesionales de Limpieza",
+  "description": "Servicios profesionales de limpieza para hogares, oficinas y negocios en Alto Hospicio e Iquique. Limpieza que se nota.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

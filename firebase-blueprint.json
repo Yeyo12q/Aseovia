@@ -1,0 +1,114 @@
+{
+  "entities": {
+    "Configuracion": {
+      "collection": "configuracion",
+      "fields": {
+        "nombreEmpresa": { "type": "string", "description": "Nombre de la empresa" },
+        "eslogan": { "type": "string", "description": "Eslogan" },
+        "descripcion": { "type": "string", "description": "Descripción general" },
+        "whatsapp": { "type": "string", "description": "Número de WhatsApp con código de país" },
+        "telefono": { "type": "string", "description": "Teléfono de contacto" },
+        "correo": { "type": "string", "description": "Correo electrónico comercial" },
+        "instagram": { "type": "string", "description": "Usuario o URL de Instagram" },
+        "facebook": { "type": "string", "description": "URL o página de Facebook" },
+        "zonasAtencion": { "type": "string", "description": "Zonas de atención (ej: Alto Hospicio e Iquique)" },
+        "horario": { "type": "string", "description": "Horario de atención" },
+        "logoUrl": { "type": "string", "description": "URL del logotipo" },
+        "heroImageUrl": { "type": "string", "description": "URL de la imagen principal" }
+      }
+    },
+    "Servicio": {
+      "collection": "servicios",
+      "fields": {
+        "nombre": { "type": "string", "description": "Nombre del servicio" },
+        "descripcion": { "type": "string", "description": "Descripción corta" },
+        "imagenUrl": { "type": "string", "description": "URL de la imagen de referencia" },
+        "categoria": { "type": "string", "description": "Categoría (hogar, negocio, oficina, especial)" },
+        "espacios": { "type": "string", "description": "Qué tipo de espacio atiende" },
+        "orden": { "type": "number", "description": "Orden de presentación" },
+        "activo": { "type": "boolean", "description": "Estado activo" }
+      }
+    },
+    "Plan": {
+      "collection": "planes",
+      "fields": {
+        "nombre": { "type": "string", "description": "Nombre del plan (BÁSICO, ESTÁNDAR, PROFUNDO)" },
+        "descripcion": { "type": "string", "description": "Descripción del alcance" },
+        "incluye": { "type": "array", "description": "Lista de tareas que incluye" },
+        "noIncluye": { "type": "array", "description": "Lista de tareas que no incluye" },
+        "tamanos": { "type": "array", "description": "Tamaños disponibles (Pequeño, Mediano, Grande)" },
+        "precioReferencial": { "type": "string", "description": "Precio o rango referencial" },
+        "destacado": { "type": "boolean", "description": "Si es el plan más solicitado" },
+        "orden": { "type": "number", "description": "Orden de presentación" },
+        "activo": { "type": "boolean", "description": "Estado activo" }
+      }
+    },
+    "Precio": {
+      "collection": "precios",
+      "fields": {
+        "servicioId": { "type": "string", "description": "ID del servicio asociado" },
+        "planId": { "type": "string", "description": "ID del plan asociado" },
+        "tamaño": { "type": "string", "description": "Tamaño (Pequeño, Mediano, Grande)" },
+        "precio": { "type": "string", "description": "Precio referencial en pesos chilenos" },
+        "activo": { "type": "boolean", "description": "Estado activo" }
+      }
+    },
+    "Galeria": {
+      "collection": "galeria",
+      "fields": {
+        "titulo": { "type": "string", "description": "Título de la imagen" },
+        "imagenUrl": { "type": "string", "description": "URL de imagen" },
+        "tipo": { "type": "string", "description": "Tipo (antes_despues, referencia, detalle)" },
+        "descripcion": { "type": "string", "description": "Descripción" },
+        "orden": { "type": "number", "description": "Orden" },
+        "activo": { "type": "boolean", "description": "Estado activo" }
+      }
+    },
+    "PreguntaFrecuente": {
+      "collection": "preguntasFrecuentes",
+      "fields": {
+        "pregunta": { "type": "string", "description": "Pregunta frecuente" },
+        "respuesta": { "type": "string", "description": "Respuesta clara" },
+        "orden": { "type": "number", "description": "Orden" },
+        "activo": { "type": "boolean", "description": "Estado activo" }
+      }
+    },
+    "Testimonio": {
+      "collection": "testimonios",
+      "fields": {
+        "nombre": { "type": "string", "description": "Nombre del cliente" },
+        "comentario": { "type": "string", "description": "Comentario o reseña" },
+        "calificacion": { "type": "number", "description": "Puntaje de 1 a 5" },
+        "imagenUrl": { "type": "string", "description": "URL de avatar o referencia" },
+        "activo": { "type": "boolean", "description": "Estado activo" }
+      }
+    },
+    "Usuario": {
+      "collection": "usuarios",
+      "fields": {
+        "username": { "type": "string", "description": "Nombre de usuario único para acceso sin correo" },
+        "rol": { "type": "string", "description": "Rol de usuario (admin, cliente)" },
+        "creadoEn": { "type": "string", "description": "Fecha de creación de la cuenta" }
+      }
+    },
+    "Cotizacion": {
+      "collection": "cotizaciones",
+      "fields": {
+        "nombre": { "type": "string", "description": "Nombre del cliente solicitante" },
+        "telefono": { "type": "string", "description": "Teléfono de contacto" },
+        "ubicacion": { "type": "string", "description": "Comuna (Alto Hospicio o Iquique)" },
+        "categoria": { "type": "string", "description": "Categoría de espacio (Hogar, Locales, etc.)" },
+        "tipoEspacio": { "type": "string", "description": "Tipo de inmueble específico" },
+        "plan": { "type": "string", "description": "Plan elegido (BÁSICO, ESTÁNDAR, PROFUNDO)" },
+        "tamano": { "type": "string", "description": "Metraje o tamaño (Pequeño, Mediano, Grande)" },
+        "precioReferencial": { "type": "string", "description": "Precio estimado" },
+        "abonoReserva": { "type": "string", "description": "Monto de reserva ($10.000)" },
+        "detalles": { "type": "string", "description": "Detalles adicionales" },
+        "fecha": { "type": "string", "description": "Fecha y hora legible" },
+        "timestamp": { "type": "number", "description": "Timestamp Unix" },
+        "estado": { "type": "string", "description": "Estado (pendiente, respondido, confirmado, archivado)" },
+        "leido": { "type": "boolean", "description": "Indicador de lectura" }
+      }
+    }
+  }
+}

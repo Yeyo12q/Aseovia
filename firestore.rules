@@ -1,0 +1,61 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+    // Función de ayuda: usuario autenticado
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+
+    // Colección de Usuarios
+    match /usuarios/{userId} {
+      allow read, write: if true;
+    }
+
+    // Configuración general: lectura y escritura de la empresa
+    match /configuracion/{docId} {
+      allow read, write: if true;
+    }
+
+    // Servicios
+    match /servicios/{docId} {
+      allow read, write: if true;
+    }
+
+    // Categorías y Subcategorías
+    match /categorias/{docId} {
+      allow read, write: if true;
+    }
+
+    // Planes
+    match /planes/{docId} {
+      allow read, write: if true;
+    }
+
+    // Precios
+    match /precios/{docId} {
+      allow read, write: if true;
+    }
+
+    // Galería
+    match /galeria/{docId} {
+      allow read, write: if true;
+    }
+
+    // Preguntas Frecuentes
+    match /preguntasFrecuentes/{docId} {
+      allow read, write: if true;
+    }
+
+    // Testimonios / Reseñas de clientes
+    match /testimonios/{docId} {
+      allow read, write: if true;
+    }
+
+    // Cotizaciones recibidas
+    match /cotizaciones/{docId} {
+      allow read, write: if true;
+    }
+  }
+}
+
